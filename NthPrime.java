@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class NthPrime {
+    public static boolean isPrime(int num){
+        if(num<2)
+            return false;
+        int cf=2;
+        for(int i=2;i<=num/2;i++){
+            if(num%i==0){
+            cf++;
+            break;
+        }
+    }
+        return cf==2;
+    }
+    public static void main(String[] args) {
+         Scanner sc=new Scanner(System.in);
+        System.out.println("Enter a Nth number ");
+        int num=sc.nextInt();
+
+        int i=1;
+        while(num>0){
+            if(isPrime(i)){
+                num--;
+                if(num==0)
+                    System.out.println( i);
+            }
+        
+        i++;
+        }
+    }
+    
+}
